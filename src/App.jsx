@@ -1,8 +1,9 @@
-import Keyboard from "./pages/keyboard/Keyboard";
+// import Keyboard from "./pages/keyboard/Keyboard";
 import { useState } from "react";
 import HomeWorks from "./pages/hws";
-import ModulesStyles from "./hw/L03/module_example/App";
-import Calculator from "./pages/calculator";
+// import ModulesStyles from "./hw/L03/module_example/App";
+// import Calculator from "./pages/calculator";
+import BlogPage from "./pages/blog";
 
 // variables
 
@@ -30,7 +31,8 @@ function App() {
       {/* <div> */}
       {showHWs && <HomeWorks />}
       {/* {showLessons && <Keyboard />} */}
-      {showLessons && <Calculator />}
+      {/* {showLessons && <Calculator />} */}
+      {showLessons && <BlogPage />}
       {/* </div> */}
     </div>
   );
