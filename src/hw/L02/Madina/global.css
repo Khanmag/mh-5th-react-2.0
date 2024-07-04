@@ -1,0 +1,60 @@
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.corp {
+  width: 540px;
+  height: 840px;
+  background-color: #001768;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+}
+.textField {
+  width: 472px;
+  height: 155px;
+  background-color: aliceblue;
+  border: 2px solid gray;
+  border-radius: 10px;
+  font-size: 20px;
+  line-height: 50px;
+  vertical-align: center;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 25px;
+}
+.corp button {
+  width: 100px;
+  height: 100px;
+  font-size: 20px;
+  background-color: #fcf5bc;
+}
+
+.AC {
+  width: 224px;
+  height: 100px;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  background-color: rgb(145, 0, 0);
+}
+.equal {
+  width: 100px;
+  height: 224px;
+  grid-area: 4/4/6/5;
+  background-color: #33a0d1;
+}
+.zero {
+  width: 224px;
+  height: 100px;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.sign {
+  background-color: #33a0d1;
+}

@@ -1,0 +1,30 @@
+.calcButtons {
+  display: grid;
+  grid-template-columns: repeat(4, 80px);
+  grid-template-rows: repeat(5, 80px);
+  gap: 1rem;
+}
+.symbolBox {
+  height: 15px;
+  display: flex;
+  align-items: center;
+  svg {
+    width: 15px;
+    height: 15px;
+  }
+}
+.calcButtons button {
+  border-radius: 40px;
+}
+.calcButtons {
+  svg {
+    width: 30px;
+    height: 30px;
+  }
+}
+.width2 {
+  grid-column: span 2;
+}
+.height2 {
+  grid-row: span 2;
+}

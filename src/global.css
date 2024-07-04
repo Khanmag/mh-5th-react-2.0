@@ -1,0 +1,33 @@
+header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+header button {
+  border: 1px solid lightblue;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  /* background-color: transparent; */
+  background: none;
+  cursor: pointer;
+}
+header button:hover {
+  background-color: aliceblue;
+}
+header button:active {
+  transform: scale(0.95);
+}
+
+.gameButton {
+  border: 1px solid lightcoral;
+  border-radius: 30px;
+}
+.textField {
+  min-height: 50px;
+  padding: 0 20px;
+  border: 1px solid lightblue;
+  border-radius: 10px;
+  line-height: 50px;
+  vertical-align: center;
+}
