@@ -1,9 +1,9 @@
 import Keyboard from "./Keyboard";
-import "./global.css";
+import "./globalstyles.css";
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <div className="corp">
         <Keyboard />
       </div>

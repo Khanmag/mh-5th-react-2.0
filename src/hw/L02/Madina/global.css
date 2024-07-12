@@ -1,4 +1,4 @@
-.App {
+.app {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,13 +36,14 @@
   background-color: #fcf5bc;
 }
 
-.AC {
+.ac {
   width: 224px;
   height: 100px;
   grid-column-start: 1;
   grid-column-end: 3;
   background-color: rgb(145, 0, 0);
 }
+
 .equal {
   width: 100px;
   height: 224px;
