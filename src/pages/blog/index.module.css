@@ -1,0 +1,12 @@
+.commentBox svg {
+  color: red;
+  cursor: pointer;
+}
+
+.commentBox a {
+  text-decoration: none;
+  color: inherit;
+}
+.commentBox a:hover {
+  color: red;
+}
