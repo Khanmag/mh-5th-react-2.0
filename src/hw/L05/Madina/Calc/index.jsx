@@ -1,7 +1,7 @@
 import { Box, Button, CssBaseline, TextField, Typography } from "@mui/material";
 import React, { useState } from "react";
-import styles from "./index.modul.css";
 import { calcButtons } from "./utilites";
+import styles from "./index.module.css";
 
 const minus = calcButtons[7].content;
 const devide = calcButtons[2].content;
@@ -69,34 +69,36 @@ const Calculator = () => {
     if (buttonContent === equal) {
     }
   };
+
+  
   return (
     <>
-      <Box className={styles.conteiner}>
-        <Box className={styles.screen}>
-          <Box display={"flex"} gap={1}>
-            <Typography>{firstValue}</Typography>
-            <Box className={styles.symbolBox}>{symbol}</Box>
-            <Typography>{lastValue}</Typography>
+        <Box className={styles.container}>
+          <Box className={styles.screen}>
+            <Box display={"flex"} gap={1}>
+              <Typography>{firstValue}</Typography>
+              <Box className={styles.symbolBox}>{symbol}</Box>
+              <Typography>{lastValue}</Typography>
+            </Box>
+            <Box>
+              <Typography className={styles.symbolBox} variant="h3">
+                {equal} {getResult()}
+              </Typography>
+            </Box>
           </Box>
-          <Box>
-            <Typography className={styles.symbolBox} variant="h3">
-              {equal} {getResult()}
-            </Typography>
+          <Box className={styles.calcButtons}>
+            {calcButtons.map((buttonItem) => (
+              <Button
+                onClick={() => handleButtonClick(buttonItem.content)}
+                className={buttonItem.className}
+                variant="outlined"
+              >
+                {buttonItem.content}
+              </Button>
+            ))}
           </Box>
         </Box>
-        <Box className={styles.calcButtons}>
-          {calcButtons.map((buttonItem) => (
-            <Button
-              onClick={() => handleButtonClick(buttonItem.content)}
-              className={buttonItem.className}
-              variant="outlined"
-            >
-              {buttonItem.content}
-            </Button>
-          ))}
-        </Box>
-      </Box>
-    </>
+      </>
   );
 };
 
