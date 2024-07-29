@@ -1,5 +1,5 @@
 import { Button } from "@mui/material";
-import styles from "./index.modul.css";
+import styles from "./index.module.css";
 
 const percentSVG = (
   <svg
