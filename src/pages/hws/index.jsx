@@ -3,6 +3,7 @@ import MadinaHW2 from "../../hw/L02/Madina";
 import MadinaHW3 from "../../hw/L03/module_example/App";
 import MadinaHW4 from "../../hw/L04/Madina/Calc";
 import MadinaHW5 from "../../hw/L05/Madina/Calc";
+import MadinaHW7 from "../../hw/L07/Madina/Blog";
 import ShowOnClickButton from "../../components/ShowOnClickButton";
 import { Box, Button } from "@mui/material";
 
@@ -24,6 +25,10 @@ const hws = {
     {
       label: "HW5",
       component: <MadinaHW5 />,
+    },
+    {
+      label: "HW7",
+      component: <MadinaHW7 />,
     },
   ],
   Sasha: [
