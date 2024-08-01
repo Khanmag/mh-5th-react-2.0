@@ -119,7 +119,7 @@ const otherHandleSubmit = (e) => {
           <label>
             <Box display={"flex"} height={30} alignItems={"center"} gap={1}>
               <h4>Password</h4>
-              <input name="email" type="email" value={otherValue} onChange={otherHandleChange} />
+              <input name="password" type="password" value={otherValue} onChange={otherHandleChange} />
             </Box>
           </label>
           {otherTextErrors.map((item) => (
