@@ -1,20 +1,23 @@
 // import Keyboard from "./pages/keyboard/Keyboard";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import HomeWorks from "./pages/hws";
 // import ModulesStyles from "./hw/L03/module_example/App";
 // import Calculator from "./pages/calculator";
 import BlogPage from "./pages/blog";
 import OldComponent from "./pages/classes";
-import { Box } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import Forms from "./pages/forms";
+import ContextLesson from "./pages/context_api";
 
 // variables
-
+export const LangContext = React.createContext();
 // Компонент - функция, которая возвращает jsx разметку или null
+
 function App() {
   const [showHWs, setShowHWs] = useState(false);
   const [showLessons, setShowLessons] = useState(true);
   const [currentDate, setCurrendDate] = useState(new Date());
+  const [currentLang, setCurrentLang] = useState("EN");
 
   const toggleShowHWs = () => {
     setShowHWs((prev) => !prev);
@@ -37,26 +40,33 @@ function App() {
   //   console.log("rerender");
   // }, [currentDate]);
   return (
-    <div>
-      <header>
-        <button onClick={toggleShowHWs}>HWs</button>
-        <button onClick={toggleShowLessons}>Lessons</button>
-      </header>
-      <Box>
-        {/* {currentDate.getHours()} {currentDate.getMinutes()}{" "} */}
-        {/* {currentDate.getSeconds()} */}
-      </Box>
-      {/* <Counter /> */}
-      {/* <ModulesStyles /> */}
-      {/* <div> */}
-      {/* {showHWs && <HomeWorks />} */}
-      <Forms />
-      {/* {showLessons && <Keyboard />} */}
-      {/* {showLessons && <Calculator />} */}
-      {/* {showLessons && <BlogPage />} */}
-      {/* {showLessons && <OldComponent prop1={"11111"} />} */}
-      {/* </div> */}
-    </div>
+    <LangContext.Provider value={currentLang}>
+      <div>
+        <header>
+          <button onClick={toggleShowHWs}>HWs</button>
+          <button onClick={toggleShowLessons}>Lessons</button>
+          <Button onClick={() => setCurrentLang("RU")}>РУ</Button>
+          <Button onClick={() => setCurrentLang("EN")}>EN</Button>
+          <Button onClick={() => setCurrentLang("CH")}>中国</Button>
+        </header>
+        <Box>
+          {/* {currentDate.getHours()} {currentDate.getMinutes()}{" "} */}
+          {/* {currentDate.getSeconds()} */}
+        </Box>
+        {/* <Counter /> */}
+        {/* <ModulesStyles /> */}
+        {/* <div> */}
+        {/* {showHWs && <HomeWorks />} */}
+        {/* <Forms /> */}
+        {/* {showLessons && <Keyboard />} */}
+        {/* {showLessons && <Calculator />} */}
+        {/* {showLessons && <BlogPage />} */}
+        {/* {showLessons && <OldComponent prop1={"11111"} />} */}
+        {/* </div> */}
+        {/* <ContextLesson date={currentDate}  /> */}
+        <ContextLesson />
+      </div>
+    </LangContext.Provider>
   );
 }
 

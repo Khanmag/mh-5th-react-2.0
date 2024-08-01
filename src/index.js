@@ -5,9 +5,12 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+export const MyContext = React.createContext();
 root.render(
   // <React.StrictMode>
+  <MyContext.Provider value={{ date: new Date() }}>
     <App />
+  </MyContext.Provider>
   // </React.StrictMode>
 );
 
