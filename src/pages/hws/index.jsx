@@ -5,6 +5,8 @@ import MadinaHW4 from "../../hw/L04/Madina/Calc";
 import MadinaHW5 from "../../hw/L05/Madina/Calc";
 import MadinaHW7 from "../../hw/L07/Madina/Blog";
 import MadinaHW9 from "../../hw/L09/Madina/Forms";
+import MadinaHW10 from "../../hw/L10/Madina/Comp";
+import MadinaHW11 from "../../hw/L11/Madina/Scroll";
 
 
 import ShowOnClickButton from "../../components/ShowOnClickButton";
@@ -36,6 +38,14 @@ const hws = {
     {
       label: "HW9",
       component: <MadinaHW9 />,
+    },
+    {
+      label: "HW10",
+      component: <MadinaHW10 />,
+    },
+    {
+      label: "HW11",
+      component: <MadinaHW11 />,
     },
   ],
   Sasha: [
