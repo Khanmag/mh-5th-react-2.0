@@ -8,6 +8,7 @@ import OldComponent from "./pages/classes";
 import { Box, Button } from "@mui/material";
 import Forms from "./pages/forms";
 import ContextLesson from "./pages/context_api";
+import InfinityScroll from "./pages/infinity-scroll";
 
 // variables
 export const LangContext = React.createContext();
@@ -64,7 +65,8 @@ function App() {
         {/* {showLessons && <OldComponent prop1={"11111"} />} */}
         {/* </div> */}
         {/* <ContextLesson date={currentDate}  /> */}
-        <ContextLesson />
+        {/* <ContextLesson /> */}
+        <InfinityScroll />
       </div>
     </LangContext.Provider>
   );
