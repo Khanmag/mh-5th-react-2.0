@@ -3,13 +3,18 @@ import ReactDOM from "react-dom/client";
 import "./global.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { Provider } from "react-redux";
+import { store } from "./store";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 export const MyContext = React.createContext();
 root.render(
   // <React.StrictMode>
   <MyContext.Provider value={{ date: new Date() }}>
-    <App />
+    <Provider store={store}>
+      {/* подключаем Redux */}
+      <App />
+    </Provider>
   </MyContext.Provider>
   // </React.StrictMode>
 );

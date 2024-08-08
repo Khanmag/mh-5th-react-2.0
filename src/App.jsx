@@ -9,6 +9,7 @@ import { Box, Button } from "@mui/material";
 import Forms from "./pages/forms";
 import ContextLesson from "./pages/context_api";
 import InfinityScroll from "./pages/infinity-scroll";
+import ReduxLesson from "./pages/redux-lesson";
 
 // variables
 export const LangContext = React.createContext();
@@ -66,7 +67,8 @@ function App() {
         {/* </div> */}
         {/* <ContextLesson date={currentDate}  /> */}
         {/* <ContextLesson /> */}
-        <InfinityScroll />
+        {/* <InfinityScroll /> */}
+        <ReduxLesson />
       </div>
     </LangContext.Provider>
   );
