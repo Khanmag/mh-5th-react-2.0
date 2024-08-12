@@ -10,6 +10,7 @@ import Forms from "./pages/forms";
 import ContextLesson from "./pages/context_api";
 import InfinityScroll from "./pages/infinity-scroll";
 import ReduxLesson from "./pages/redux-lesson";
+import HooksLesson from "./pages/hooks-lesson";
 
 // variables
 export const LangContext = React.createContext();
@@ -68,7 +69,8 @@ function App() {
         {/* <ContextLesson date={currentDate}  /> */}
         {/* <ContextLesson /> */}
         {/* <InfinityScroll /> */}
-        <ReduxLesson />
+        {/* <ReduxLesson /> */}
+        <HooksLesson />
       </div>
     </LangContext.Provider>
   );
