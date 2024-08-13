@@ -1,5 +1,5 @@
 // import Keyboard from "./pages/keyboard/Keyboard";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import HomeWorks from "./pages/hws";
 // import ModulesStyles from "./hw/L03/module_example/App";
 // import Calculator from "./pages/calculator";
@@ -11,84 +11,52 @@ import ContextLesson from "./pages/context_api";
 import InfinityScroll from "./pages/infinity-scroll";
 import ReduxLesson from "./pages/redux-lesson";
 import HooksLesson from "./pages/hooks-lesson";
+import { Route, Routes } from "react-router-dom";
+import Layout from "./components/Layout";
+import LessonsSelector from "./pages/LessonsSelector";
+import Calculator from "./pages/calculator";
+import PostsRouting from "./pages/routing";
+import Post from "./pages/routing/Post";
 
 // variables
 export const LangContext = React.createContext();
 // Компонент - функция, которая возвращает jsx разметку или null
 
 function App() {
-  const [showHWs, setShowHWs] = useState(false);
-  const [showLessons, setShowLessons] = useState(true);
-  const [currentDate, setCurrendDate] = useState(new Date());
   const [currentLang, setCurrentLang] = useState("EN");
-
-  const toggleShowHWs = () => {
-    setShowHWs((prev) => !prev);
-    if (showLessons) setShowLessons(false);
-  };
-  const toggleShowLessons = () => {
-    setShowLessons((prev) => !prev);
-    if (showHWs) setShowHWs(false);
-  };
-  // useEffect(() => {
-  //   const timerId = setInterval(() => {
-  //     console.log("tik tak");
-  //     setCurrendDate(new Date());
-  //   }, 1000);
-  //   return () => {
-  //     clearInterval(timerId);
-  //   };
-  // }, []);
-  // useEffect(() => {
-  //   console.log("rerender");
-  // }, [currentDate]);
   return (
     <LangContext.Provider value={currentLang}>
-      <div>
-        <header>
-          <button onClick={toggleShowHWs}>HWs</button>
-          <button onClick={toggleShowLessons}>Lessons</button>
-          <Button onClick={() => setCurrentLang("RU")}>РУ</Button>
-          <Button onClick={() => setCurrentLang("EN")}>EN</Button>
-          <Button onClick={() => setCurrentLang("CH")}>中国</Button>
-        </header>
-        <Box>
-          {/* {currentDate.getHours()} {currentDate.getMinutes()}{" "} */}
-          {/* {currentDate.getSeconds()} */}
-        </Box>
-        {/* <Counter /> */}
-        {/* <ModulesStyles /> */}
-        {/* <div> */}
-        {/* {showHWs && <HomeWorks />} */}
+      <>
         {/* <Forms /> */}
         {/* {showLessons && <Keyboard />} */}
-        {/* {showLessons && <Calculator />} */}
         {/* {showLessons && <BlogPage />} */}
         {/* {showLessons && <OldComponent prop1={"11111"} />} */}
-        {/* </div> */}
-        {/* <ContextLesson date={currentDate}  /> */}
         {/* <ContextLesson /> */}
         {/* <InfinityScroll /> */}
         {/* <ReduxLesson /> */}
-        <HooksLesson />
-      </div>
+        {/* <HooksLesson /> */}
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Layout
+                currentLang={currentLang}
+                setCurrentLang={setCurrentLang}
+              />
+            }
+          >
+            <Route index element={<b>HOME</b>} />
+            <Route path="hws" element={<HomeWorks />} />
+            <Route path="lessons" element={<LessonsSelector />} />
+            <Route path="lessons/calculator" element={<Calculator />} />
+            <Route path="lessons/routing" element={<PostsRouting />} />
+            <Route path="posts/:id" element={<Post />} />
+            <Route path="*" element={<b>страницы не существует</b>} />
+          </Route>
+        </Routes>
+      </>
     </LangContext.Provider>
   );
 }
 
 export default App;
-
-////
-// onClick={() => {
-//   // if (showHWs === true) {
-//   // if (showHWs) {
-//   //   setShowHWs(false);
-//   // } else {
-//   //   setShowHWs(true);
-//   // }
-//   //
-//   // setShowHWs(prev => {
-//   //   if (prev) return false
-//   //   else return true
-//   // })
-// }}
